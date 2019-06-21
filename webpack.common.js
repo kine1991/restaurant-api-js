@@ -16,7 +16,13 @@ module.exports = {
         rules: [
           {
             test: /\.html$/,
-            use: ["html-loader"]
+            use: {
+              loader: 'html-loader',
+              options: {
+                attrs: [':xlink:href', ':src', ':href']
+              }
+            }
+            // use: ["html-loader"]
           },
           {
             test: /\.(svg|png|jpg|gif)/,
