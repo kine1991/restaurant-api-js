@@ -1,7 +1,7 @@
 .logo{
     width: 4rem;
     height: 4rem;
-    fill: $color-indigo-600;
+    // fill: teal;
     margin: 0 3rem;
 }
 
@@ -157,4 +157,34 @@
     @media only screen and (max-width: $bp-small) {
         display: none;
     }
+}
+
+
+////////////////////////////////////////
+// GITHUB PROFILE
+.profile {
+    display: flex;
+    flex-direction: column;
+    margin: 3rem;
+
+    & > * {
+        display: flex;
+
+        & > ul{
+            flex: 1;
+        }
+    }
+    &__photo{
+        flex: 0 0 200px;
+        margin-right: 3rem;
+
+        & > img{
+            width: 100%;
+        }
+    }
+    &__list{
+        flex: 1;
+        font-size: 2rem;
+    }
+    
 }

@@ -58,14 +58,21 @@
     }
     @media only screen and (max-width: $bp-small) {
         min-height: 1rem; 
-    }
+    }  
+}
 
-
-
-    
+.main-view{
+    text-align: center;
+    // display: flex;
+    // flex-direction: column;
+    // align-content: center;
+    justify-self: center;
+    font-size: 2.4rem;
+    // width: 100%;
+    margin: 3rem auto;
 }
 
 .ooo{
-    flex: 1;
+    // flex: 1;
     // min-height: 60rem;
 }
