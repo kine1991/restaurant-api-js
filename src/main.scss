@@ -1,8 +1,16 @@
-$primary: teal;
-$danger: purple;
-@import "~bootstrap/scss/bootstrap";
+// $primary: teal;
+// $danger: purple;
+// @import "~bootstrap/scss/bootstrap";
 
 // body {
 //     background: red;
 //     font-size: 33px;
 // }
+
+@import "sass/colors";
+@import "sass/base";
+@import "sass/components";
+@import "sass/layout";
+@import "sass/typography";
+@import "sass/buttons";
+@import "sass/select";

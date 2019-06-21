@@ -1,0 +1,160 @@
+.logo{
+    width: 4rem;
+    height: 4rem;
+    fill: $color-indigo-600;
+    margin: 0 3rem;
+}
+
+.search{
+    flex: 0 0 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media only screen and (max-width: $bp-smallest){
+        flex: 0 0 100%;
+        order: 1; 
+        background-color: $color-grey-light-2;
+    }
+    
+    &__input{
+        font-family: inherit;
+        font-size: inherit;
+        color: inherit;
+        background-color: $color-grey-light-2;
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 100px;
+        width: 90%;
+        margin-right: -3rem;
+        transition: all .2s;
+
+
+        &:focus{
+            outline: none;
+            width: 100%;
+        }
+    }
+    &__button{
+        color: inherit;
+        background-color: $color-grey-light-2;
+        fill: currentColor;
+        border: none;
+
+        &:focus {
+            outline: none;
+        }
+        &:active{
+            transform: translateY(2px);
+        }
+    }
+    &__icon{
+        width: 2rem;
+        height: 2rem;
+        // fill: $color-indigo-600;
+    }
+}
+
+.user-nav {
+    align-self: stretch;
+    display: flex;
+    // margin-right: 2rem;
+
+    & > * {
+        padding: 0 2rem;
+        cursor: pointer;
+        height: 100%;
+        display: flex;
+        align-items: center;
+
+        &:hover{
+            background-color: $color-grey-light-2;
+        }
+    }
+    &__user{
+        
+    }
+    &__icon-box{
+        position: relative;
+
+    }
+    &__notification{
+        font-size: 0.8rem;
+        height: 1.75rem;
+        width: 1.75rem;
+        color: #fff;
+        position: absolute;
+        top: 1.5rem;
+        right: 1.6rem;
+        background-color: $color-primary;
+        border-radius: 50%;
+        padding: .5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__icon{
+        height: 2.5rem;
+        width: 2.5rem;
+        fill: $color-grey-dark-2;
+    }
+    &__user-photo{
+        width: 3rem;
+        border-radius: 50%;
+    }
+
+}
+
+.side-nav{
+    list-style: none;
+    font-size: 1.5rem;
+    text-align: center;
+    width: 100%;
+
+    @media only screen and (max-width: $bp-small) {
+        display: flex;
+
+    }
+
+    &__item{
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        &:hover{
+            background-color: $color-primary;
+        }
+        transition: all 0.2s;
+    }
+    &__icon{
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-right: 1.2rem;
+        fill: currentColor;
+    }
+    &__link:link,
+    &__link:visited{
+        color: $color-grey-dark-3;
+        text-decoration: none;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        padding: 1.5rem 0;
+        // color: $color-grey-dark-1;
+        &:hover{
+            color: $color-grey-light-1;
+        }
+    }
+}
+
+////////////////////////////////////////
+// LEGAL TEXT
+.legal {
+    font-size: 1.2rem;
+    color: var(--color-grey-light-4);
+    text-align: center;
+    padding: 2.5rem;
+
+    @media only screen and (max-width: $bp-small) {
+        display: none;
+    }
+}
