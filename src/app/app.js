@@ -17,19 +17,21 @@ search.addEventListener('keyup', (e) => {
       gitHub.getUser(searchText).then(data => {
         if(data.profile.message === "Not Found"){
           // show alert
-
-          document.querySelector('.main-view').insertAdjacentHTML('afterbegin', 'Not Found')
+          ui.clearAlert('.alert')
+          ui.showAlert(`User <strong>${searchText}</strong> not found`, 'alert alert-danger')
         } else {
           // show profile
-          // console.log(data)
+          ui.clearProfile()
           ui.showProfile(data.profile)
-            
+          ui.showRepos(data.repos)
+          
+  
         }
       })
 
     } else {
       // Clear Profile
-
+      ui.clearProfile()
     }
 
 })
