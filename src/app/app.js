@@ -1,62 +1,51 @@
-import GitHub from './github'
-import UI from './ui'
 
-const gitHub = new GitHub()
-const ui = new UI()
+import {Github} from './model/Github';
+import * as githubView from './view/githubView';
 
-
+import {elements, renderLoader, clearLoader} from './base';
 
 
-const search = document.querySelector('.search__input');
 
-search.addEventListener('keyup', (e) => {
-  const searchText = e.target.value;
-  // console.log(searchText)
+const state = {
 
-    if(searchText !== ''){
-      gitHub.getUser(searchText).then(data => {
-        if(data.profile.message === "Not Found"){
-          // show alert
-          ui.clearAlert('.alert')
-          ui.showAlert(`User <strong>${searchText}</strong> not found`, 'alert alert-danger')
-        } else {
-          // show profile
-          ui.clearProfile()
-          ui.showProfile(data.profile)
-          ui.showRepos(data.repos)
-          
-  
-        }
-      })
+}
 
-    } else {
-      // Clear Profile
-      ui.clearProfile()
+
+/** 
+ * SEARCH CONTROLLER
+ */
+const controlGithub = async () => {
+  // get query from view
+  const query = githubView.getInput();
+  if(query){
+    //  New search object and add to state
+    state.github = new Github();
+    // clear input
+    githubView.clearInput();
+    githubView.clearAlert('alert');
+    githubView.clearProfile();
+
+    try{
+      renderLoader(elements.main);
+      const {profile, repos} = await state.github.getUser(query);
+      clearLoader();
+      githubView.showProfile(profile);
+      githubView.showRepos(repos);
+      
+    } catch(err){
+      clearLoader();
+
+      if(err.message.includes('404')){
+        githubView.showAlert(`User <strong>${query}</strong> not found`, 'alert alert-danger');
+      }
+
     }
+  }
+}
+
+
+elements.searchForm.addEventListener('submit', (e) => {
+    controlGithub()
+    e.preventDefault()
 
 })
-
-// addEventListener
-
-
-
-
-// import { inputsAreValid } from "./utils/inputs-are-valid";
-// import { parseInputs } from "./utils/parse-inputs";
-
-// export const run = (alertService, componentService) => {
-//   alertService.hideErrors();
-
-//   componentService.onClick(() => {
-//     alertService.hideErrors();
-//     const inputs = componentService.getInputs();
-//     const parsedInputs = parseInputs(...inputs);
-//     if (inputsAreValid(...parsedInputs)) {
-//       const [numA, numB] = parsedInputs;
-//       componentService.setResult(numA + numB);
-//     } else {
-//       componentService.setResult("");
-//       alertService.handleAdditionError(inputs, parsedInputs);
-//     }
-//   });
-// };
