@@ -32,9 +32,9 @@
 
 .content{
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: column;
     @media only screen and (max-width: $bp-largest) {
-        flex-direction: row;
+        flex-direction: column;
         min-height: calc(100vh - 7rem); 
     }
 
@@ -63,13 +63,14 @@
 
 .main-view{
     text-align: center;
-    // display: flex;
-    // flex-direction: column;
+    display: flex;
+    flex-direction: column;
     // align-content: center;
+    max-width: 100%;
     justify-self: center;
     font-size: 1.6rem;
     // width: 100%;
-    margin: 3rem auto;
+    // margin: 3rem auto;
 }
 
 .ooo{

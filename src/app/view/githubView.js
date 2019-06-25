@@ -7,7 +7,6 @@ export const clearInput = () => elements.searchInput.value = '';
 
 export const showProfile = (user) => {
     const profileTemplate = `
-        <div>
             <div class="profile__photo">
                 <img src="${user.avatar_url}" alt="">
                 <a href="${user.html_url}" target="_blank" class="btn btn-primary btn-lg btn-block">View Profile</a>
@@ -31,7 +30,6 @@ export const showProfile = (user) => {
         </div>
         <div class="mt-3">
             <div class="repos"></div>
-        </div>
     `;
 
     elements.profile.insertAdjacentHTML('afterbegin', profileTemplate);
