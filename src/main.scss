@@ -7,15 +7,32 @@
 //     font-size: 33px;
 // }
 
-@import "sass/colors";
-@import "sass/base";
-@import "sass/components";
-@import "sass/layout";
-@import "sass/typography";
-@import "sass/buttons";
-@import "sass/select";
+// @import "sass/colors";
+// @import "sass/base";
+// @import "sass/components";
+// @import "sass/layout";
+// @import "sass/typography";
+// @import "sass/buttons";
+// @import "sass/select";
 
 @import "sass//bootstrap/bootstrap.scss";
 
 
 // @import "~bootstrap/scss/buttons";
+
+.container{
+
+}
+
+
+.col-3{
+    min-height: 100vh;
+    background: indianred;
+}
+.col-9{
+    background: darkkhaki;
+}
+
+.w-300{
+    width: 300px;
+}
