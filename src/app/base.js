@@ -3,11 +3,16 @@ export const elements = {
     searchInput: document.querySelector('.search__input'),
     container: document.querySelector('.container-fluid'),
     containerRecipes: document.querySelector('.container-recipes'),
-    searchButton: document.querySelector('.search__icon'),
-    profile: document.querySelector('.profile'),
-    mainHeading: document.querySelector('.main-heading'),
-    alert: document.querySelector('.alert'),
-    main: document.querySelector('.main-view')
+    viewRecipe: document.querySelector('.view-recipe'),
+    recipe: document.querySelector('.recipe'),
+    btnBackToRecipes: document.querySelector('.btn-back-to-recipes'),
+    btn: document.querySelector('.btn1'),
+
+    // searchButton: document.querySelector('.search__icon'),
+    // profile: document.querySelector('.profile'),
+    // mainHeading: document.querySelector('.main-heading'),
+    // alert: document.querySelector('.alert'),
+    // main: document.querySelector('.main-view')
 };
 
 

@@ -17,7 +17,7 @@ const renderRecipe = (recipe) => {
         <p class="card-text">${recipe.publisher}</p>
         <div class="d-flex justify-content-between align-items-center">
           <div class="btn-group">
-            <a href="#${recipe.recipe_id}" class="btn btn-sm btn-outline-secondary">View</a>
+            <a href="#${recipe.recipe_id}" class="btn btn-sm btn-outline-secondary view-recipe">View</a>
             <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
           </div>
           <small class="text-muted">9 mins</small>
